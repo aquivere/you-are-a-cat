@@ -1,7 +1,6 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
@@ -14,10 +13,12 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin-top: -5rem;
 }
 
 .content {
   width: 300px;
+  margin-top: 1rem;
 }
 
 .clickText {
@@ -30,7 +31,29 @@ body {
   width: 5rem;
 }
 
+.cat-type {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+  margin: 0.5rem 0;
+}
+
+.cat-desc {
+  font-size: 1rem;
+  color: black;
+  margin-bottom: 2rem;
+}
+
 .button {
   background-color: transparent;
   border: none;
+}
+
+.again-button {
+  background-color: brown
+}
+
+.cat-content {
+  display: flex;
+  flex-direction: column;
 }

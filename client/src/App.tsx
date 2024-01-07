@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import './App.css';
 import catGif from './assets/cat.gif';
+import chipiGif from './assets/chipi-chipi-chapa-chapa.gif';
 import titleText from './assets/title.svg';
-import reactLogo from './assets/react.svg';
+import zoningGif from './assets/zoning-out.gif';
 
 function App() {
   const [chosenCat, setChosenCat] = useState(-1);
@@ -15,53 +16,53 @@ function App() {
   // TODO: update placeholders
   const cats: Cat[] = [
     {
-      catType: "sleepy cat 0",
-      image: reactLogo,
-      description: "you are a sleepy cat!"
+      catType: "chipi chipi chapa chapa",
+      image: chipiGif,
+      description: "chipi chipi chapa chapa dubi dubi daba daba"
     },
     {
-      catType: "sleepy cat 1",
-      image: reactLogo,
-      description: "you are a sleepy cat!"
+      catType: "zoning out",
+      image: zoningGif,
+      description: "what'd you say again?"
     },
     {
       catType: "sleepy cat 2",
-      image: reactLogo,
+      image: chipiGif,
       description: "you are a sleepy cat!"
     },
     {
       catType: "sleepy cat 3",
-      image: reactLogo,
+      image: chipiGif,
       description: "you are a sleepy cat!"
     },
     {
       catType: "sleepy cat 4",
-      image: reactLogo,
+      image: chipiGif,
       description: "you are a sleepy cat!"
     },
     {
       catType: "sleepy cat 5",
-      image: reactLogo,
+      image: chipiGif,
       description: "you are a sleepy cat!"
     },
     {
       catType: "sleepy cat 6",
-      image: reactLogo,
+      image: chipiGif,
       description: "you are a sleepy cat!"
     },
     {
       catType: "sleepy cat 7",
-      image: reactLogo,
+      image: chipiGif,
       description: "you are a sleepy cat!"
     },
     {
       catType: "sleepy cat 8",
-      image: reactLogo,
+      image: chipiGif,
       description: "you are a sleepy cat!"
     },
     {
       catType: "sleepy cat 9",
-      image: reactLogo,
+      image: chipiGif,
       description: "you are a sleepy cat!"
     }
   ];
@@ -70,6 +71,10 @@ function App() {
     const number = Math.floor(Math.random() * 10);
     setChosenCat(number);
   };
+
+  const handleAgain = () => {
+    setChosenCat(-1);
+  }
 
   return (
     <>
@@ -85,10 +90,12 @@ function App() {
               </button>
               <div className="clickText">click the cat</div>
             </> : 
-            <>
-              <p>{cats[chosenCat]["catType"]}</p>
+            <div className="cat-content">
               <img src={cats[chosenCat]["image"]} className="content" alt="cat" />
-            </>}
+              <div className="cat-type">{cats[chosenCat]["catType"]}</div>
+              <div className="cat-desc">{cats[chosenCat]["description"]}</div>
+              <button className="again-button" onClick={handleAgain}>go again</button>
+            </div>}
         </div>
       </div>
     </>
